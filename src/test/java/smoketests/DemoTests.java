@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import startpages.StartPage;
 
 import java.io.IOException;
+import java.net.http.HttpResponse;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -33,8 +34,9 @@ public class DemoTests extends SetupEnv {
     @DisplayName("send authorization POST request")
     void sendPostTest() {
         HttpClientR req = new HttpClientR();
+        HttpResponse<String> responseStr = null;
         try {
-            req.getPostResponse("https://car-test.norma24.ru/api/token/create",
+            responseStr = req.getPostResponse("https://car-test.norma24.ru/api/token/create",
                     "{\"username\":\"sale_point\",\"password\":\"sale_point\"}");
         } catch (IOException e) {
             e.printStackTrace();
@@ -42,5 +44,15 @@ public class DemoTests extends SetupEnv {
             e.printStackTrace();
         }
         assertTrue(true);
+
+        System.out.println();
+        System.out.println(responseStr.statusCode());
+        System.out.println(responseStr.body());
+        System.out.println(responseStr.headers());
+        System.out.println(responseStr.uri());
+        System.out.println(responseStr.version());
+        System.out.println(responseStr.sslSession());
     }
+
+
 }

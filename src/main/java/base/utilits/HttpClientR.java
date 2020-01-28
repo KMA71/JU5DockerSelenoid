@@ -45,11 +45,13 @@ public class HttpClientR {
                 .build();
     }
 
-    public void getPostResponse(String urlApiPoint, String reqBody) throws IOException, InterruptedException {
+    public HttpResponse<String> getPostResponse(String urlApiPoint, String reqBody) throws IOException, InterruptedException {
         this.response =
                 this.client.send(createPostReq(urlApiPoint, reqBody), HttpResponse.BodyHandlers.ofString());
         System.out.println(this.response.statusCode());
         System.out.println(this.response.body());
+        System.out.println(this.response.headers());
+        return this.response;
     }
 
 }
