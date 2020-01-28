@@ -25,5 +25,4 @@ public class DemoTests extends SetupEnv {
         assertTrue(true);
 
     }
-
 }

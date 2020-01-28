@@ -23,7 +23,7 @@ public class SetupEnv {
         capabilities.setCapability("screenResolution", "1920x1080x24");
 
         driver = new RemoteWebDriver(
-                URI.create("http://127.0.0.1:4444/wd/hub").toURL(),
+                URI.create("http://10.77.51.11:4443/wd/hub").toURL(),
                 capabilities
         );
 
