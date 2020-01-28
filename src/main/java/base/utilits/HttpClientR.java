@@ -40,7 +40,7 @@ public class HttpClientR {
                 .uri(URI.create(urlApiPoint))
                 .timeout(Duration.ofMinutes(1))
                 //TODO реализовать метод для передачи файлов "application/json"
-                .header("Content-Type", "text/json")
+                .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString(reqBody))
                 .build();
     }
