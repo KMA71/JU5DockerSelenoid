@@ -11,8 +11,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.URI;
 
 public class SetupEnv {
-    public /*static*/ RemoteWebDriver driver;
-    public /*static*/ JavascriptExecutor js;
+    public RemoteWebDriver driver;
+    public JavascriptExecutor js;
 
     @BeforeEach
     public void openDriver() throws Exception {

@@ -9,6 +9,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import rolepages.GozMain;
+import rolepages.UnderMain;
+import roles.GozRole;
+import roles.Role;
 
 public class CarLoginPage extends Page {
 
@@ -43,10 +47,26 @@ public class CarLoginPage extends Page {
     public void setEnter() {
         this.enter.click();
     }
+//
+//    public void auth(String usrLoign, String usrPassword) {
+//        setLogin(usrLoign);
+//        setPassw(usrPassword);
+//        setEnter();
+//    }
 
-    public void auth(String usrLoign, String usrPassword) {
+    public GozMain auth(String usrLoign, String usrPassword, GozRole role) {
         setLogin(usrLoign);
         setPassw(usrPassword);
         setEnter();
+        return new GozMain(driver);
     }
+
+    public GozMain auth(String usrLoign, String usrPassword, Role role) {
+        setLogin(usrLoign);
+        setPassw(usrPassword);
+        setEnter();
+        return new GozMain(driver);
+    }
+
+
 }

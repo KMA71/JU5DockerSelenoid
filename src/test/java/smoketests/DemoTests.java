@@ -21,6 +21,9 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.opentest4j.AssertionFailedError;
+import rolepages.GozMain;
+import roles.GozRole;
+import roles.Role;
 import startpages.StartPage;
 
 import java.io.IOException;
@@ -42,12 +45,12 @@ public class DemoTests extends SetupEnv {
         StartPage startPage = new StartPage(driver);
         startPage.fillSearchField("abrakadabra");
 
-
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
 
 /*
@@ -75,7 +78,7 @@ public class DemoTests extends SetupEnv {
         WebElement tmp;
         CarLoginPage carLoginPage = new CarLoginPage(driver);
 
-        carLoginPage.auth(username, password);
+        carLoginPage.auth(username, password, new Role());
 
         try {
             Thread.sleep(5000);
