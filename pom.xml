@@ -84,6 +84,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
+                    <parallel>methods</parallel>
+                    <threadCount>5</threadCount>
                     <properties>
                         <includeTags>critical</includeTags>
                         <excludeTags>slow</excludeTags>
