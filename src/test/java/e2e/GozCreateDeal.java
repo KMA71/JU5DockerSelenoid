@@ -21,6 +21,7 @@ public class GozCreateDeal extends SetupEnv {
         CarLoginPage carLoginPage = new CarLoginPage(driver);
         GozMain gozMain = carLoginPage.auth("sale_point", "sale_point", new GozRole());
 
+        gozMain.createDealClick();
         assertTrue(true);
     }
 

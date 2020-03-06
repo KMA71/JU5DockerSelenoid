@@ -30,7 +30,7 @@ public class CarLoginPage extends Page {
 
     public CarLoginPage(RemoteWebDriver driver) {
         super(driver);
-        super.driver.get("https://car-test.norma24.ru/login");
+        super.driver.get("https://autocredit-front.dev.norma.rnb.com/login");
         super.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login")));
 
         PageFactory.initElements(this.driver, this);
@@ -58,14 +58,16 @@ public class CarLoginPage extends Page {
         setLogin(usrLoign);
         setPassw(usrPassword);
         setEnter();
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("[class=\"el-loading-mask\"]")));
         return new GozMain(driver);
     }
 
-    public GozMain auth(String usrLoign, String usrPassword, Role role) {
+    public UnderMain auth(String usrLoign, String usrPassword, Role role) {
         setLogin(usrLoign);
         setPassw(usrPassword);
         setEnter();
-        return new GozMain(driver);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("[class=\"el-loading-mask\"]")));
+        return new UnderMain(driver);
     }
 
 

@@ -25,8 +25,13 @@
         <junit-jupiter-params.version>5.5.2</junit-jupiter-params.version>
         <junit-jupiter-api.version>5.5.2</junit-jupiter-api.version>
         <junit-jupiter-engine.version>5.5.2</junit-jupiter-engine.version>
-        <selenium-java.version>3.141.59</selenium-java.version>
+<!--        <selenium-java.version>3.141.59</selenium-java.version> -->
         <jackson-databind.version>2.10.2</jackson-databind.version>
+
+        <selenide.version>5.7.0</selenide.version>
+        <slf4j-log4j12.version>1.7.30</slf4j-log4j12.version>
+        <allure-junit5.version>2.13.1</allure-junit5.version>
+        <allure-selenide.version>2.13.1</allure-selenide.version>
 
     </properties>
 
@@ -52,11 +57,37 @@
             <version>${junit-jupiter-engine.version}</version>
             <scope>test</scope>
         </dependency>
-
+<!--
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium-java.version}</version>
+        </dependency>
+-->
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>${selenide.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j-log4j12.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit5</artifactId>
+            <version>${allure-junit5.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-selenide</artifactId>
+            <version>${allure-selenide.version}</version>
         </dependency>
 
         <dependency>
